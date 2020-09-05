@@ -81486,6 +81486,11 @@ var Card = function Card(_ref) {
       errorsMessage = _React$useState8[0],
       setErrorsMessage = _React$useState8[1];
 
+  var _React$useState9 = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(false),
+      _React$useState10 = _slicedToArray(_React$useState9, 2),
+      disabled = _React$useState10[0],
+      setDisabled = _React$useState10[1];
+
   var cardRef = data.reduce(function (acc, value) {
     acc[value.id] = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
     return acc;
@@ -81501,27 +81506,24 @@ var Card = function Card(_ref) {
 
     if (((_email$email = email.email) === null || _email$email === void 0 ? void 0 : _email$email.length) > 0) {
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("/email", email).then(function (response) {
-        /*if (response.data.error) {
-            Swal.fire({
-                title: "Oops.. une erreur est survenue!",
-                text: response.data.error,
-                icon: "error",
-                showConfirmButton: true,
-                showCancelButton: false,
-                showCloseButton: false
-            });
-        } else {*/
-        setEmailValidator(response.data.message);
-        setUserId(response.data.id);
+        if (response.data.error) {
+          sweetalert2__WEBPACK_IMPORTED_MODULE_6___default.a.fire({
+            title: "Oops.. une erreur est survenue!",
+            text: response.data.error,
+            icon: "error",
+            showConfirmButton: true,
+            showCancelButton: false,
+            showCloseButton: false
+          });
+          setDisabled(response.data.disabled);
+        } else {
+          setEmailValidator(response.data.message);
+          setUserId(response.data.id);
 
-        if (response.data.isValid === true) {
-          handleClickToRefCard(1);
-        } // }
-
-      })["catch"](function (error) {
-        var _error$response, _error$response$data, _error$response$data$;
-
-        return setEmailValidator((_error$response = error.response) === null || _error$response === void 0 ? void 0 : (_error$response$data = _error$response.data) === null || _error$response$data === void 0 ? void 0 : (_error$response$data$ = _error$response$data.errors) === null || _error$response$data$ === void 0 ? void 0 : _error$response$data$.email[0]);
+          if (response.data.isValid === true) {
+            window.scrollTo(0, document.querySelector(".survey_card").scrollHeight + 420);
+          }
+        }
       });
     } else {
       setEmailValidator("Veuillez remplir ce champ !");
@@ -81529,7 +81531,7 @@ var Card = function Card(_ref) {
   };
 
   var handleClickToRefCard = function handleClickToRefCard(id) {
-    return window.scrollTo(0, cardRef[id + 1].current.offsetTop);
+    window.scrollTo(0, cardRef[id + 1].current.offsetTop);
   };
 
   var onChangeFormInput = function onChangeFormInput(e, id) {
@@ -81601,12 +81603,13 @@ var Card = function Card(_ref) {
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
       options: options,
       onChangeFormInput: onChangeFormInput,
-      surveyId: survey.id
+      surveyId: survey.id,
+      disabled: disabled
     }), emailValidator && emailValidator.length > 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Validations_Validations__WEBPACK_IMPORTED_MODULE_4__["default"], {
       emailValidator: emailValidator,
       errorsMessage: errorsMessage,
       surveyId: survey.id
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    }), disabled === false && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_3__["default"], {
       surveyId: survey.id,
       handleClickToRefCard: handleClickToRefCard,
       onSubmitEmail: onSubmitEmail
@@ -81725,13 +81728,15 @@ __webpack_require__.r(__webpack_exports__);
 var Input = function Input(_ref) {
   var surveyId = _ref.surveyId,
       onChangeFormInput = _ref.onChangeFormInput,
-      options = _ref.options;
+      options = _ref.options,
+      disabled = _ref.disabled;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "survey_answers"
   }, options !== undefined ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Select_Select__WEBPACK_IMPORTED_MODULE_1__["default"], {
     options: options,
     onChangeFormInput: onChangeFormInput,
-    surveyId: surveyId
+    surveyId: surveyId,
+    disabled: disabled
   }) : surveyId === 20 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
     onChange: function onChange(e) {
       return onChangeFormInput(e, surveyId);
@@ -81739,14 +81744,16 @@ var Input = function Input(_ref) {
     cols: 10,
     rows: 2,
     placeholder: "Remplissez ce champ",
-    maxLength: 255
+    maxLength: 255,
+    disabled: disabled && disabled
   }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: surveyId === 1 ? "email" : surveyId === 2 ? "number" : "text",
     onChange: function onChange(e) {
       return onChangeFormInput(e, surveyId);
     },
     placeholder: surveyId === 1 ? "Renseignez votre email" : surveyId === 2 ? "Renseignez votre age" : "Remplissez ce champ",
-    maxLength: 255
+    maxLength: 255,
+    disabled: disabled && disabled
   })));
 };
 
@@ -81770,12 +81777,14 @@ __webpack_require__.r(__webpack_exports__);
 var Select = function Select(_ref) {
   var options = _ref.options,
       onChangeFormInput = _ref.onChangeFormInput,
-      surveyId = _ref.surveyId;
+      surveyId = _ref.surveyId,
+      disabled = _ref.disabled;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
     size: 5,
     onChange: function onChange(e) {
       return onChangeFormInput(e, surveyId);
-    }
+    },
+    disabled: disabled && disabled
   }, options === null || options === void 0 ? void 0 : options.map(function (option, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
       value: option,
@@ -82034,7 +82043,7 @@ var Answers = function Answers(_ref) {
       setDate = _React$useState4[1];
 
   react__WEBPACK_IMPORTED_MODULE_0___default.a.useEffect(function () {
-    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/results/".concat(match.params.answerUrl)).then(function (res) {
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/results/".concat(match.params.reponsesUrl)).then(function (res) {
       var _res$data$answers$;
 
       setAnswers(res.data.answers);

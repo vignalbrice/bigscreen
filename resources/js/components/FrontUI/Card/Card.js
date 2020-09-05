@@ -14,6 +14,8 @@ const Card = ({ data, isAnswer }) => {
 
     const [errorsMessage, setErrorsMessage] = React.useState("");
 
+    const [disabled, setDisabled] = React.useState(false);
+
     const cardRef = data.reduce((acc, value) => {
         acc[value.id] = React.createRef();
         return acc;
@@ -23,36 +25,36 @@ const Card = ({ data, isAnswer }) => {
         e.preventDefault();
         let email = { email: dataForm[1]?.answer };
         if (email.email?.length > 0) {
-            axios
-                .post("/email", email)
-                .then(response => {
-                    /*if (response.data.error) {
-                        Swal.fire({
-                            title: "Oops.. une erreur est survenue!",
-                            text: response.data.error,
-                            icon: "error",
-                            showConfirmButton: true,
-                            showCancelButton: false,
-                            showCloseButton: false
-                        });
-                    } else {*/
+            axios.post("/email", email).then(response => {
+                if (response.data.error) {
+                    Swal.fire({
+                        title: "Oops.. une erreur est survenue!",
+                        text: response.data.error,
+                        icon: "error",
+                        showConfirmButton: true,
+                        showCancelButton: false,
+                        showCloseButton: false
+                    });
+                    setDisabled(response.data.disabled);
+                } else {
                     setEmailValidator(response.data.message);
                     setUserId(response.data.id);
                     if (response.data.isValid === true) {
-                        handleClickToRefCard(1);
+                        window.scrollTo(
+                            0,
+                            document.querySelector(".survey_card")
+                                .scrollHeight + 420
+                        );
                     }
-                    // }
-                })
-                .catch(error =>
-                    setEmailValidator(error.response?.data?.errors?.email[0])
-                );
+                }
+            });
         } else {
             setEmailValidator("Veuillez remplir ce champ !");
         }
     };
-    const handleClickToRefCard = id =>
+    const handleClickToRefCard = id => {
         window.scrollTo(0, cardRef[id + 1].current.offsetTop);
-
+    };
     const onChangeFormInput = (e, id) => {
         let target = e.target;
         let value = target.value;
@@ -128,6 +130,7 @@ const Card = ({ data, isAnswer }) => {
                                       options={options}
                                       onChangeFormInput={onChangeFormInput}
                                       surveyId={survey.id}
+                                      disabled={disabled}
                                   />
                                   {emailValidator &&
                                       emailValidator.length > 0 && (
@@ -137,13 +140,15 @@ const Card = ({ data, isAnswer }) => {
                                               surveyId={survey.id}
                                           />
                                       )}
-                                  <Buttons
-                                      surveyId={survey.id}
-                                      handleClickToRefCard={
-                                          handleClickToRefCard
-                                      }
-                                      onSubmitEmail={onSubmitEmail}
-                                  />
+                                  {disabled === false && (
+                                      <Buttons
+                                          surveyId={survey.id}
+                                          handleClickToRefCard={
+                                              handleClickToRefCard
+                                          }
+                                          onSubmitEmail={onSubmitEmail}
+                                      />
+                                  )}
                               </div>
                           );
                       })}

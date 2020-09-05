@@ -31,14 +31,14 @@ class FrontController extends Controller
         ]);
         $email = $request->input('email');
         $isAlreadyUser = $user->where('email', '=', $email, 'AND', 'user_types', '=', 'clients')->first();
-        if ($isAlreadyUser->status === 1) {
-            return response()->json(['error' => 'Vous avez déjà participé à notre enqûete']);
-        } else {
-            if (strlen($isAlreadyUser) >  0) {
-                return response()->json(['message' => 'Cet email est valide !', 'id' => $isAlreadyUser->id, 'isValid' => true]);
+        if (strlen($isAlreadyUser) >  0) {
+            if ($isAlreadyUser->status === 1) {
+                return response()->json(['error' => 'Vous avez déjà participé à notre enqûete', 'disabled' => true]);
             } else {
-                return response()->json(['message' => 'Cet email est inexistant !', 'isValid' => false]);
+                return response()->json(['message' => 'Cet email est valide !', 'id' => $isAlreadyUser->id, 'isValid' => true]);
             }
+        } else {
+            return response()->json(['message' => 'Cet email est inexistant !', 'isValid' => false]);
         }
     }
 
@@ -75,7 +75,7 @@ class FrontController extends Controller
      */
     public function showResultAnswersByUrl($url)
     {
-        $user = User::where('url', '=', $url, 'AND', 'status', '=', true)->first();
+        $user = User::where([['url', $url,], ['status', 1]])->first();
         $answers = $user->answers()->with('survey')->orderBy('survey_id')->get();
         return response()->json(['answers' => $answers]);
     }

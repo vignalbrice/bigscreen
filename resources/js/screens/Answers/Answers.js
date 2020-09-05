@@ -9,7 +9,7 @@ const Answers = ({ match }) => {
     const [answers, setAnswers] = React.useState([]);
     const [date, setDate] = React.useState("");
     React.useEffect(() => {
-        axios.get(`/results/${match.params.answerUrl}`).then(res => {
+        axios.get(`/results/${match.params.reponsesUrl}`).then(res => {
             setAnswers(res.data.answers);
             setDate(res.data.answers[0]?.created_at);
         });

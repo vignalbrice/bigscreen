@@ -1,7 +1,7 @@
 import React from "react";
 import Select from "../Select/Select";
 
-const Input = ({ surveyId, onChangeFormInput, options }) => {
+const Input = ({ surveyId, onChangeFormInput, options, disabled }) => {
     return (
         <div className="survey_answers">
             {options !== undefined ? (
@@ -9,6 +9,7 @@ const Input = ({ surveyId, onChangeFormInput, options }) => {
                     options={options}
                     onChangeFormInput={onChangeFormInput}
                     surveyId={surveyId}
+                    disabled={disabled}
                 />
             ) : surveyId === 20 ? (
                 <textarea
@@ -17,6 +18,7 @@ const Input = ({ surveyId, onChangeFormInput, options }) => {
                     rows={2}
                     placeholder="Remplissez ce champ"
                     maxLength={255}
+                    disabled={disabled && disabled}
                 />
             ) : (
                 <>
@@ -37,6 +39,7 @@ const Input = ({ surveyId, onChangeFormInput, options }) => {
                                 : "Remplissez ce champ"
                         }
                         maxLength={255}
+                        disabled={disabled && disabled}
                     />
                 </>
             )}
