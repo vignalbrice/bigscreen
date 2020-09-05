@@ -1,0 +1,16 @@
+.login_panel {
+    background: #ecf0f1;
+    padding: 30px;
+    border: 2px lightgray solid;
+    position: absolute;
+    top: 9em;
+}
+
+.login_logo > img {
+    max-width: 300px;
+    max-height: 300px;
+    margin-left: -10px;
+}
+.checkbox > input[type="checkbox"] {
+    margin-right: 5px;
+}

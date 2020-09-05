@@ -1,0 +1,113 @@
+.survey_title {
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+* {
+    scroll-behavior: smooth;
+}
+.survey_card {
+    padding: 20px;
+    border: none !important;
+    border-radius: none !important;
+    background-color: #ecf0f1;
+    margin-bottom: 30em;
+    position: relative;
+    z-index: 8;
+}
+.survey_active {
+    display: block;
+}
+.survey_buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 4;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+    content: "";
+    position: absolute;
+    border-left: 6px dotted white;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    z-index: 4;
+}
+.survey_buttons > .btn_survey {
+    background-color: #fff;
+    padding: 5px;
+    margin: 5px;
+    text-decoration: none;
+    color: #333;
+    border: 1px lightgray solid;
+}
+.btn_survey_active {
+    background-color: #fff;
+    padding: 5px;
+    margin: 5px;
+    text-decoration: none;
+    color: #333;
+    border: 1px lightgray solid;
+    display: block;
+}
+.survey_validations {
+    display: flex;
+    justify-content: flex-end;
+}
+.emailValidator {
+    background-color: #333;
+    color: white;
+    margin-top: 10px;
+    border-radius: 3px;
+}
+.emailValidator > p {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 8px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.survey_questions {
+    color: #333;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+.survey_label {
+    color: #333;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+.survey_answers {
+    background: #fff;
+    padding: 10px;
+    /*border: 0.5px dashed #bdc3c7;*/
+}
+.survey_answers > textarea,
+.survey_answers > input,
+.survey_answers > select {
+    padding: 10px;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-radius: none !important;
+    width: 100%;
+    border: 1px solid #bdc3c7;
+}
+
+.survey_answers > input:focus,
+.survey_answers > textarea:focus,
+.survey_answers > select:focus {
+    outline: none;
+}

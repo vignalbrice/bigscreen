@@ -1,0 +1,19 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    object-fit: contain;
+    background-color: #2c3e50;
+    padding-left: 21%;
+    z-index: 10; /*display: none;*/
+}
+.header > a > img {
+    object-fit: contain;
+    width: 100%;
+    max-width: 450px;
+}
+@media (max-width: 500px) {
+    .header {
+        padding-left: 0%;
+    }
+}
