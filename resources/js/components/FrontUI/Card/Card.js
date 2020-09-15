@@ -82,10 +82,22 @@ const Card = ({ data, isAnswer, disabled, setDisabled }) => {
                 });
             })
             .catch(error => {
-                setErrorsMessage(error.response.data.errors);
+                let status = error.response.status;
+                let messages = error.response.data.errors;
+                if (typeof messages === "object") {
+                    Object.keys(messages).forEach(index => {
+                        setErrorsMessage(messages[index][0]);
+                    });
+                    Swal.fire({
+                        title: "Oops..une erreur est survenue",
+                        html: `<p>${messages.answers}</p>`,
+                        icon: "error"
+                    });
+                } else {
+                    alert("Une erreur est survenue (" + status + ")");
+                }
             });
     };
-
     return (
         <form onSubmit={submitSurvey}>
             <div className="timeline">
@@ -132,13 +144,25 @@ const Card = ({ data, isAnswer, disabled, setDisabled }) => {
                                       disabled={disabled}
                                   />
                                   {emailValidator &&
-                                      emailValidator.length > 0 && (
-                                          <Validations
-                                              emailValidator={emailValidator}
-                                              errorsMessage={errorsMessage}
-                                              surveyId={survey.id}
-                                          />
-                                      )}
+                                  emailValidator.length > 0 ? (
+                                      <Validations
+                                          errorsMessage={errorsMessage}
+                                          emailValidator={emailValidator}
+                                          surveyId={survey.id}
+                                      />
+                                  ) : (
+                                      errorsMessage &&
+                                      errorsMessage.length >
+                                          0(
+                                              <Validations
+                                                  errorsMessage={errorsMessage}
+                                                  emailValidator={
+                                                      emailValidator
+                                                  }
+                                                  surveyId={survey.id}
+                                              />
+                                          )
+                                  )}
                                   {disabled === false && (
                                       <Buttons
                                           surveyId={survey.id}

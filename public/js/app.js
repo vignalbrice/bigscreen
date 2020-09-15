@@ -81462,6 +81462,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CardHeader_CardHeader__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../CardHeader/CardHeader */ "./resources/js/components/FrontUI/CardHeader/CardHeader.js");
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_6__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -81593,7 +81595,21 @@ var Card = function Card(_ref) {
         showCloseButton: false
       });
     })["catch"](function (error) {
-      setErrorsMessage(error.response.data.errors);
+      var status = error.response.status;
+      var messages = error.response.data.errors;
+
+      if (_typeof(messages) === "object") {
+        Object.keys(messages).forEach(function (index) {
+          setErrorsMessage(messages[index][0]);
+        });
+        sweetalert2__WEBPACK_IMPORTED_MODULE_6___default.a.fire({
+          title: "Oops..une erreur est survenue",
+          html: "<p>".concat(messages.answers, "</p>"),
+          icon: "error"
+        });
+      } else {
+        alert("Une erreur est survenue (" + status + ")");
+      }
     });
   };
 
@@ -81633,11 +81649,15 @@ var Card = function Card(_ref) {
       onChangeFormInput: onChangeFormInput,
       surveyId: survey.id,
       disabled: disabled
-    }), emailValidator && emailValidator.length > 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Validations_Validations__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      emailValidator: emailValidator,
+    }), emailValidator && emailValidator.length > 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Validations_Validations__WEBPACK_IMPORTED_MODULE_4__["default"], {
       errorsMessage: errorsMessage,
+      emailValidator: emailValidator,
       surveyId: survey.id
-    }), disabled === false && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    }) : errorsMessage && errorsMessage.length > 0( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Validations_Validations__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      errorsMessage: errorsMessage,
+      emailValidator: emailValidator,
+      surveyId: survey.id
+    })), disabled === false && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_3__["default"], {
       surveyId: survey.id,
       nextRefCard: nextRefCard,
       previousRefCard: previousRefCard,
@@ -82209,9 +82229,10 @@ var Login = function Login() {
   }),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       data = _React$useState2[0],
-      setData = _React$useState2[1];
+      setData = _React$useState2[1]; // Store pathname dashboard
 
-  var location = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["useLocation"])();
+
+  var redirect = "/dashboard";
   var history = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["useHistory"])();
 
   var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(null),
@@ -82244,8 +82265,8 @@ var Login = function Login() {
       console.log(response.data);
       setErrors(false);
       localStorage.setItem("token", response.data.token);
-      localStorage.setItem("user", JSON.stringify(response.data.user));
-      var redirect = "/dashboard";
+      localStorage.setItem("user", JSON.stringify(response.data.user)); // Redirect to dashboard
+
       history.replace(redirect);
     })["catch"](function (error) {
       console.log(error);

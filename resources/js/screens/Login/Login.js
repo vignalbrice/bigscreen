@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
 import Swal from "sweetalert2";
@@ -9,7 +9,9 @@ const Login = () => {
         email: "",
         password: ""
     });
-    const location = useLocation();
+    // Store pathname dashboard
+    let redirect = "/dashboard";
+
     const history = useHistory();
     const [errors, setErrors] = React.useState(null);
     const emailRef = React.useRef();
@@ -42,7 +44,7 @@ const Login = () => {
                     "user",
                     JSON.stringify(response.data.user)
                 );
-                let redirect = "/dashboard";
+                // Redirect to dashboard
                 history.replace(redirect);
             })
             .catch(error => {

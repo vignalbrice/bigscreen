@@ -5,9 +5,7 @@ namespace App\Http\Controllers;
 use App\Answer;
 use App\Survey;
 use App\User;
-use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class FrontController extends Controller
@@ -45,6 +43,11 @@ class FrontController extends Controller
     public function store(Request $request)
     {
 
+        $request->validate([
+            'answers' => 'array|min:19',
+            'answers.answer' => 'required|string',
+            'answers.id' => 'required'
+        ]);
         $index = $request->all();
         $user = User::where([['id', $index['userId']], ['user_types', 'clients']])->first();
         $user->url = Str::random(20);
