@@ -5,7 +5,7 @@ import Buttons from "../Buttons/Buttons";
 import Validations from "../Validations/Validations";
 import CardHeader from "../CardHeader/CardHeader";
 import Swal from "sweetalert2";
-const Card = ({ data, isAnswer }) => {
+const Card = ({ data, isAnswer, disabled, setDisabled }) => {
     const [dataForm, setDataForm] = React.useState([]);
 
     const [emailValidator, setEmailValidator] = React.useState("");
@@ -13,8 +13,6 @@ const Card = ({ data, isAnswer }) => {
     const [userId, setUserId] = React.useState(0);
 
     const [errorsMessage, setErrorsMessage] = React.useState("");
-
-    const [disabled, setDisabled] = React.useState(false);
 
     const cardRef = data.reduce((acc, value) => {
         acc[value.id] = React.createRef();
@@ -52,27 +50,30 @@ const Card = ({ data, isAnswer }) => {
             setEmailValidator("Veuillez remplir ce champ !");
         }
     };
-    const handleClickToRefCard = id => {
+    const nextRefCard = id =>
         window.scrollTo(0, cardRef[id + 1].current.offsetTop);
-    };
+    const previousRefCard = id =>
+        window.scrollTo(0, cardRef[id - 1].current.offsetTop);
+
     const onChangeFormInput = (e, id) => {
         let target = e.target;
         let value = target.value;
 
         let form = [...dataForm];
         form[id] = { id: id, answer: value };
+
         setDataForm(form);
     };
+
     const submitSurvey = e => {
         e.preventDefault();
         dataForm.shift();
         axios
             .post("/answers", { answers: dataForm, userId: userId })
             .then(response => {
-                console.log(response.data);
                 Swal.fire({
                     title: "Good Job !",
-                    text: response.data.text,
+                    html: `<p>${response.data.text}</p>`,
                     footer: `<a href="http://${window.location.host}/reponses/${response.data.url}">Voir mes réponses</a>`,
                     icon: "success",
                     showConfirmButton: false,
@@ -105,9 +106,7 @@ const Card = ({ data, isAnswer }) => {
                                   </div>
                                   <Buttons
                                       surveyId={d.id}
-                                      handleClickToRefCard={
-                                          handleClickToRefCard
-                                      }
+                                      nextRefCard={nextRefCard}
                                       isAnswer={isAnswer}
                                   />
                               </div>
@@ -143,9 +142,8 @@ const Card = ({ data, isAnswer }) => {
                                   {disabled === false && (
                                       <Buttons
                                           surveyId={survey.id}
-                                          handleClickToRefCard={
-                                              handleClickToRefCard
-                                          }
+                                          nextRefCard={nextRefCard}
+                                          previousRefCard={previousRefCard}
                                           onSubmitEmail={onSubmitEmail}
                                       />
                                   )}

@@ -30,7 +30,7 @@ class FrontController extends Controller
             'email' => 'Required|Email|Min:2|Max:80'
         ]);
         $email = $request->input('email');
-        $isAlreadyUser = $user->where('email', '=', $email, 'AND', 'user_types', '=', 'clients')->first();
+        $isAlreadyUser = $user->where([['email', $email], ['user_types', 'clients']])->first();
         if (strlen($isAlreadyUser) >  0) {
             if ($isAlreadyUser->status === 1) {
                 return response()->json(['error' => 'Vous avez déjà participé à notre enqûete', 'disabled' => true]);
@@ -46,7 +46,7 @@ class FrontController extends Controller
     {
 
         $index = $request->all();
-        $user = User::where('id', '=', $index['userId'], 'AND', 'user_types', '=', 'clients')->first();
+        $user = User::where([['id', $index['userId']], ['user_types', 'clients']])->first();
         $user->url = Str::random(20);
         $user->status = 1;
         $user->save();

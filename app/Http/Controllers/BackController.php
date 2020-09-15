@@ -11,7 +11,6 @@ use App\Http\Controllers\Controller;
 use App\Survey;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
-use stdClass;
 
 class BackController extends Controller
 {
@@ -60,21 +59,22 @@ class BackController extends Controller
         $answer = [];
         foreach ($users as $user) {
             $answers = $user->answers()->with('survey')->orderBy('survey_id')->get();
-            array_push($answer, $answers);
+            $username = $user->name;
+            $object = (object) [
+                'username' => $username,
+                'answer' => $answers
+            ];
+            array_push($answer, $object);
         }
-        return response()->json(['answer' => $answer]);
+        return $answer;
     }
     public function getChartsAnswers()
     {
         $pie6 = $this->getChartsByCountAndAnswer(6);
         $pie7 = $this->getChartsByCountAndAnswer(7);
         $pie10 = $this->getChartsByCountAndAnswer(10);
-        $radar11 = $this->getRadarChartsByCountAndAnswer(11);
-        $radar12 = $this->getRadarChartsByCountAndAnswer(12);
-        $radar13 = $this->getRadarChartsByCountAndAnswer(13);
-        $radar14 = $this->getRadarChartsByCountAndAnswer(14);
-        $radar15 = $this->getRadarChartsByCountAndAnswer(15);
-        return response()->json(["pie" => [$pie6, $pie7, $pie10], "radar" => [$radar11, $radar12, $radar13, $radar14, $radar15]]);
+        $radar = $this->getRadarChartData();
+        return response()->json(["pie" => [$pie6, $pie7, $pie10], "radar" => $radar]);
     }
     protected function getChartsByCountAndAnswer($id)
     {
@@ -82,7 +82,7 @@ class BackController extends Controller
         $survey = new Survey();
         $stats = [];
         $question = $survey->with("answers")->where('id', $id)->first();
-        $options = explode(', ', $question['option']); // a changer par json_decode
+        $options = explode(', ', $question['option']);
         foreach ($options as $option) {
             $count = $answer->where('label', $option)->count();
             $labels = $answer->where('label', $option)->get();
@@ -96,28 +96,42 @@ class BackController extends Controller
         }
         return $stats;
     }
-    protected function getRadarChartsByCountAndAnswer($id)
+    public function getRadarChartData()
     {
-        $answer = new Answer();
-        $survey = new Survey();
-        $stats = [];
-        $question = $survey->with("answers")->where('id', $id)->first();
-        $options = explode(', ', $question['option']);
-        foreach ($options as $option) {
-            $count = DB::table('answers')->distinct('label')->where('label', $option)->count();
+        $idQuestionList = [11, 12, 13, 14, 15];
+        // Get title of question
+        $questionData                       = [];
+        foreach ($idQuestionList as $idQuestion) {
+            $questionInfo                       = Survey::with(['answers'])->where('id', $idQuestion)->get()->toArray();
+            $questionData_elt                   = [];
+            foreach ($questionInfo as $thisQuestion) {
+                // Push title and id
+                $questionData_elt['title']                  = $thisQuestion['label'];
+                $questionData_elt['id']                     = $idQuestion;
+                $questionData_elt['data']                   = [];
+                /* Labels */
+                $questionData_elt['data']['labels']         = [];
+                /* Datasets */
+                $questionData_elt['data']['datasets']       = [];
+                $datasetsArray                              = [];
+                $datasetsArray['data']                      = [];
+                // Get options
+                $temp_choice                = explode(', ', $thisQuestion['option']);
+
+                foreach ($temp_choice as $choice) {
+                    // Get count of each option by idQuestion
+                    $temp                   = Answer::with('survey')->where([['label', $choice], ['survey_id', $idQuestion]])->count();
+                    // Push all data in final result
+                    array_push($questionData_elt['data']['labels'], $choice);
+                    if (strlen($temp) > 0) {
+                        array_push($datasetsArray['data'], $temp);
+                    }
+                }
+                array_push($questionData_elt['data']['datasets'], $datasetsArray);
+            }
+            array_push($questionData, $questionData_elt);
         }
-        $labels = $answer->distinct('label')->where('survey_id',  $id)->get();
-
-        foreach ($labels as $label) {
-
-            $object = (object) [
-                'label' => $label->label,
-                'count' => $count,
-            ];
-            array_push($stats, $object);
-        }
-
-        return $stats;
+        return $questionData;
     }
     /**
      * Log the user out (Invalidate the token)
@@ -128,7 +142,7 @@ class BackController extends Controller
     {
         $this->guard()->logout();
 
-        return response()->json(['message' => 'Successfully logged out']);
+        return response()->json(['message' => 'Déconnexion avec succès']);
     }
     /**
      * Get the authenticated User.

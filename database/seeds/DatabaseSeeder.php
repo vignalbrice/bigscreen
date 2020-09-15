@@ -30,9 +30,9 @@ class DatabaseSeeder extends Seeder
             ],
         ]);
 
-        // Création de 2 users en utilisant la factory
+        // Création de 3 users en utilisant la factory
         // la fonction factory de Laravel permet d'utiliser le facker définit
-        factory(App\User::class, 2)->create();
+        factory(App\User::class, 3)->create();
 
         // insertion des enquêtes
         DB::table('surveys')->insert([

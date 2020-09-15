@@ -5,8 +5,7 @@ import Answers from "../screens/Answers/Answers";
 import Admin from "../screens/Protected/Admin/Admin";
 import Login from "../screens/Login/Login";
 import "./App.css";
-import Survey from "../screens/Protected/Survey/Survey";
-import Answer from "../screens/Protected/Answer/Answer";
+import NotFound from "../screens/NotFound/NotFound";
 
 const App = () => {
     return (
@@ -19,6 +18,7 @@ const App = () => {
                     <PrivateRoute path="/dashboard">
                         <Route component={Admin} />
                     </PrivateRoute>
+                    <Route component={NotFound} />
                 </Switch>
             </div>
         </BrowserRouter>

@@ -1,0 +1,18 @@
+.four_zero_four_bg {
+    color: white;
+}
+.contant_box_404 {
+    color: white;
+}
+.link_404 {
+    text-decoration: none;
+    color: white;
+    padding: 8px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+}
+.contant_box_404 > .link_404:hover {
+    background: white;
+    color: #333;
+    text-decoration: none;
+}

@@ -4,8 +4,8 @@
     font-weight: 500;
 }
 
-* {
-    scroll-behavior: smooth;
+.survey {
+    overflow-y: hidden !important;
 }
 .survey_card {
     padding: 20px;
@@ -21,7 +21,8 @@
 }
 .survey_buttons {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    width: 100%;
 }
 
 /* The actual timeline (the vertical ruler) */
@@ -110,4 +111,38 @@
 .survey_answers > textarea:focus,
 .survey_answers > select:focus {
     outline: none;
+}
+/*  Refresh Container */
+.refresh {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    z-index: 8;
+    border-radius: 50%;
+    cursor: pointer;
+}
+/* Refresh Loader */
+.refresh > .refresh_loader {
+    width: 60px;
+    height: 60px;
+}
+/* Refresh Loader Hover  */
+.refresh > .refresh_loader:hover {
+    transform: rotate(1080deg);
+    transition: all 2s; /* transition when the mouse over */
+}
+.refresh_loader:after {
+    content: "Recharger la page";
+    position: relative;
+    top: 120px;
+    left: -14px;
+    font-size: 1.25em;
+    font-family: helvetica, arial, sans-serif;
+    font-variant: small-caps;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 2s;
 }

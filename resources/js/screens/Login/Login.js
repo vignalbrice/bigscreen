@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation, useHistory } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
+import Swal from "sweetalert2";
 
 const Login = () => {
     const [data, setData] = React.useState({
@@ -51,6 +52,15 @@ const Login = () => {
                 passwordRef.current.value = "";
             });
     };
+
+    React.useEffect(() => {
+        if (localStorage.getItem("message")) {
+            let message = localStorage.getItem("message");
+            Swal.fire("Vous avez bien été déconnecter !", message, "success");
+            localStorage.clear();
+        }
+    });
+
     let msg = !errors ? "Login Successful" : "Wrong Credentials";
     let name = !errors ? "alert alert-success" : "alert alert-danger";
     return (

@@ -23,26 +23,16 @@ const Admin = ({ history }) => {
         let user = JSON.parse(localStorage.getItem("user"));
         setAdmin([...admin, user]);
         axios
-            .get("api/auth/survey")
+            .all([
+                axios.get("api/auth/survey"),
+                axios.get("api/auth/answer"),
+                axios.get("api/auth/charts")
+            ])
             .then(response => {
-                setSurvey(response.data);
-            })
-            .catch(error => {
-                console.log(error);
-            });
-        axios
-            .get("api/auth/answer")
-            .then(response => {
-                setAnswer(response.data.answer);
-            })
-            .catch(error => {
-                console.log(error);
-            });
-        axios
-            .get("api/auth/charts")
-            .then(response => {
-                setPieCharts(response.data.pie);
-                setRadarCharts(response.data.radar);
+                setSurvey(response[0].data);
+                setAnswer(response[1].data);
+                setPieCharts(response[2].data.pie);
+                setRadarCharts(response[2].data.radar);
             })
             .catch(error => {
                 console.log(error);

@@ -2,7 +2,8 @@ import React from "react";
 
 const Buttons = ({
     surveyId,
-    handleClickToRefCard,
+    previousRefCard,
+    nextRefCard,
     onSubmitEmail,
     isAnswer
 }) => {
@@ -21,7 +22,7 @@ const Buttons = ({
                     <a
                         className="btn_survey"
                         type="button"
-                        onClick={() => handleClickToRefCard(surveyId)}
+                        onClick={() => nextRefCard(surveyId)}
                     >
                         Suivant
                     </a>
@@ -39,13 +40,24 @@ const Buttons = ({
                     Suivant
                 </a>
             ) : (
-                <a
-                    className="btn_survey"
-                    type="button"
-                    onClick={() => handleClickToRefCard(surveyId)}
-                >
-                    Suivant
-                </a>
+                surveyId > 1 && (
+                    <div className="survey_buttons">
+                        <a
+                            className="btn_survey"
+                            type="button"
+                            onClick={() => previousRefCard(surveyId)}
+                        >
+                            Retour
+                        </a>
+                        <a
+                            className="btn_survey"
+                            type="button"
+                            onClick={() => nextRefCard(surveyId)}
+                        >
+                            Suivant
+                        </a>
+                    </div>
+                )
             )}
         </div>
     );

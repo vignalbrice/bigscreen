@@ -2,7 +2,7 @@ import React from "react";
 const Survey = ({ survey }) => {
     return (
         <div>
-            <table className="table bg-dark table-bordered">
+            <table className="table table-striped">
                 <thead>
                     <tr>
                         <th scope="col">#Numéro de la question</th>
