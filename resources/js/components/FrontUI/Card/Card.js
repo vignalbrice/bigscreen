@@ -28,7 +28,7 @@ const Card = ({
         <form onSubmit={submitSurvey}>
             <div className="timeline">
                 {isAnswer
-                    ? data.map(d => {
+                    ? data.map((d, i) => {
                           return (
                               <div
                                   className={`survey_card`}
@@ -43,7 +43,7 @@ const Card = ({
                                       {d.label}
                                   </div>
                                   <Buttons
-                                      surveyId={d.id}
+                                      surveyId={i}
                                       nextRefCard={nextRefCard}
                                       isAnswer={isAnswer}
                                   />

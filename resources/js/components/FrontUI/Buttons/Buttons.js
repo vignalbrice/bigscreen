@@ -10,7 +10,7 @@ const Buttons = ({
     return (
         <div className="survey_buttons">
             {isAnswer ? (
-                surveyId === 20 ? (
+                surveyId === 19 ? (
                     <button
                         type="button"
                         className="btn btn_survey"

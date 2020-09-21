@@ -3,9 +3,6 @@
     font-size: 1.2em;
     font-weight: 500;
 }
-* {
-    overflow: hidden;
-}
 .survey_card {
     padding: 20px;
     border: none !important;
