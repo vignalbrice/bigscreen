@@ -3,9 +3,8 @@
     font-size: 1.2em;
     font-weight: 500;
 }
-
-.survey {
-    overflow-y: hidden !important;
+* {
+    overflow: hidden;
 }
 .survey_card {
     padding: 20px;
@@ -62,8 +61,7 @@
     display: block;
 }
 .survey_validations {
-    display: flex;
-    justify-content: flex-end;
+    text-align: right;
 }
 .emailValidator {
     background-color: #333;

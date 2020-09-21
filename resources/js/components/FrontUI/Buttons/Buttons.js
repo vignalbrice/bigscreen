@@ -40,24 +40,22 @@ const Buttons = ({
                     Suivant
                 </a>
             ) : (
-                surveyId > 1 && (
-                    <div className="survey_buttons">
-                        <a
-                            className="btn_survey"
-                            type="button"
-                            onClick={() => previousRefCard(surveyId)}
-                        >
-                            Retour
-                        </a>
-                        <a
-                            className="btn_survey"
-                            type="button"
-                            onClick={() => nextRefCard(surveyId)}
-                        >
-                            Suivant
-                        </a>
-                    </div>
-                )
+                <div className="survey_buttons">
+                    <a
+                        className="btn_survey"
+                        type="button"
+                        onClick={() => previousRefCard(surveyId)}
+                    >
+                        Retour
+                    </a>
+                    <a
+                        className="btn_survey"
+                        type="button"
+                        onClick={() => nextRefCard(surveyId)}
+                    >
+                        Suivant
+                    </a>
+                </div>
             )}
         </div>
     );

@@ -16,10 +16,10 @@ class Answer extends Model
     ];
     public function users()
     {
-        return $this->belongsToMany(User::class); // relaction hasMany pour lié plusieurs produits a une catégorie
+        return $this->belongsToMany(User::class); // relaction hasMany pour lié plusieurs réponses a plusieurs utilisateurs
     }
     public function survey()
     {
-        return $this->belongsTo(Survey::class); // relaction hasMany pour lié plusieurs produits a une catégorie
+        return $this->belongsTo(Survey::class); // relaction belongsTo pour lié plusieurs réponses a un seul questionnaire  
     }
 }

@@ -11,7 +11,7 @@ use Illuminate\Support\Str;
 class FrontController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of surveys questions.
      *
      * @return \Illuminate\Http\Response
      */
@@ -39,14 +39,14 @@ class FrontController extends Controller
             return response()->json(['message' => 'Cet email est inexistant !', 'isValid' => false]);
         }
     }
-
+    /** Store data from form array into database */
     public function store(Request $request)
     {
 
         $request->validate([
             'answers' => 'array|min:19',
-            'answers.answer' => 'required|string',
-            'answers.id' => 'required'
+            'answers.*.answer' => 'required',
+            'answers.*.id' => 'required'
         ]);
         $index = $request->all();
         $user = User::where([['id', $index['userId']], ['user_types', 'clients']])->first();
@@ -71,7 +71,7 @@ class FrontController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified resource from url.
      *
      * @param string $url
      * @return \Illuminate\Http\Response

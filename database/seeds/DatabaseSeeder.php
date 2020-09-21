@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
         // la fonction factory de Laravel permet d'utiliser le facker définit
         factory(App\User::class, 3)->create();
 
-        // insertion des enquêtes
+        // insertion des questions du questionnaire
         DB::table('surveys')->insert([
             [
                 'label' => 'Votre adresse mail',
@@ -56,7 +56,7 @@ class DatabaseSeeder extends Seeder
             [
                 'label' => 'Nombre de personne dans votre foyer (adulte & enfants)',
                 'survey_type' => 'C',
-                'option' => '0, 1, 2, 3, 4, 5'
+                'option' => '1, 2, 3, 4, 5'
             ],
             [
                 'label' => 'Votre profession',
@@ -138,14 +138,14 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'label' => 'Aimeriez vous pouvoir enregistrer des émissions TV pour pouvoir les regarder ultérieurement ?',
-                'survey_type' => 'C',
-                'option' => '1, 2, 3, 4, 5'
+                'survey_type' => 'A',
+                'option' => 'Oui, Non'
 
             ],
             [
                 'label' => 'Aimeriez vous jouer à des jeux exclusifs sur votre Bigscreen ?',
-                'survey_type' => 'C',
-                'option' => '1, 2, 3, 4, 5'
+                'survey_type' => 'A',
+                'option' => 'Oui, Non'
             ],
             [
                 'label' => 'Quelle nouvelle fonctionnalité de vos rêve devrait exister sur Bigscreen ?',

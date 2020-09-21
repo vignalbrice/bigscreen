@@ -3,8 +3,8 @@ import React from "react";
 const Answer = ({ answer }) => {
     return answer.map(a => (
         <div className="row">
-            <div className="row">
-                <p className="display-4 text-white">{a.username}</p>
+            <div className="col-12 ml-1">
+                <p className="h1 text-white">{a.username}</p>
             </div>
             <div className="col-10">
                 <table className="table table-striped ">

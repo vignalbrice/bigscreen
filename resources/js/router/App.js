@@ -4,8 +4,8 @@ import Surveys from "../screens/Surveys/Surveys";
 import Answers from "../screens/Answers/Answers";
 import Admin from "../screens/Protected/Admin/Admin";
 import Login from "../screens/Login/Login";
-import "./App.css";
 import NotFound from "../screens/NotFound/NotFound";
+import "./App.css";
 
 const App = () => {
     return (

@@ -18242,7 +18242,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "*,\r\n*:before,\r\n*:after {\r\n    padding: 0;\r\n    margin: 0;\r\n}\r\n\r\n.admin {\r\n    overflow-x: hidden;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.sidebar-btn {\r\n    position: absolute;\r\n    clip: rect(0, 0, 0, 0);\r\n}\r\n\r\nlabel[for=\"sidebar-btn\"] {\r\n    position: fixed;\r\n    left: 15px;\r\n    top: 15px;\r\n    z-index: 2;\r\n    height: 30px;\r\n    width: 30px;\r\n    cursor: pointer;\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect style='fill:rgb(255,255,255)' width='15' height='3'/><rect style='fill:rgb(255,255,255)' y='8' width='20' height='3'/><rect style='fill:rgb(255,255,255)' y='16' width='25' height='3'/></svg>\");\r\n    background-size: contain;\r\n}\r\n\r\n.sidebar-btn + label,\r\n.content {\r\n    transition: left 0.1s;\r\n}\r\n\r\n.sidebar-btn:checked + label {\r\n    left: 245px;\r\n}\r\n\r\n.sidebar-btn:checked ~ .content {\r\n    left: 230px;\r\n}\r\n\r\n.sidebar {\r\n    list-style-type: none;\r\n    width: 100%;\r\n    height: 100%;\r\n    position: fixed;\r\n    top: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    z-index: 0;\r\n    background-color: #2c3e50;\r\n}\r\n\r\n.sidebar_container > img {\r\n    -o-object-fit: contain;\r\n       object-fit: contain;\r\n    width: 100%;\r\n    max-width: 200px;\r\n    margin-bottom: 2em;\r\n}\r\n.sidebar_container {\r\n    max-width: 230px;\r\n    padding-top: 6em;\r\n    align-content: center;\r\n    align-items: center;\r\n    text-align: center;\r\n}\r\n.sidebar_footer {\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 2.5em;\r\n    align-content: center;\r\n    align-items: center;\r\n    text-align: center;\r\n}\r\n.sidebar li {\r\n    background-color: #2c3e50;\r\n    padding: 0.5em;\r\n    color: #fff;\r\n    font-weight: 600;\r\n    transition-property: all;\r\n    transition-duration: 50ms;\r\n    transition-timing-function: ease-in;\r\n    cursor: pointer;\r\n}\r\n\r\n.content {\r\n    min-height: 100%;\r\n    min-width: 100%;\r\n    background-color: #34495e;\r\n    position: relative;\r\n    top: 0;\r\n    bottom: 100%;\r\n    left: 0;\r\n    z-index: 1;\r\n    padding: 4em;\r\n}\r\n\r\ntable > thead > tr > th {\r\n    color: #fff;\r\n}\r\ntd {\r\n    color: #fff;\r\n}\r\n", ""]);
+exports.push([module.i, "*,\r\n*:before,\r\n*:after {\r\n    padding: 0;\r\n    margin: 0;\r\n}\r\n\r\n.admin {\r\n    overflow-x: hidden;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.sidebar-btn {\r\n    position: absolute;\r\n    clip: rect(0, 0, 0, 0);\r\n}\r\n\r\nlabel[for=\"sidebar-btn\"] {\r\n    position: fixed;\r\n    left: 15px;\r\n    top: 15px;\r\n    z-index: 2;\r\n    height: 30px;\r\n    width: 30px;\r\n    cursor: pointer;\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect style='fill:rgb(255,255,255)' width='15' height='3'/><rect style='fill:rgb(255,255,255)' y='8' width='20' height='3'/><rect style='fill:rgb(255,255,255)' y='16' width='25' height='3'/></svg>\");\r\n    background-size: contain;\r\n}\r\n\r\n.sidebar-btn + label,\r\n.content {\r\n    transition: left 0.1s;\r\n}\r\n\r\n.sidebar-btn:checked + label {\r\n    left: 245px;\r\n}\r\n\r\n.sidebar-btn:checked ~ .content {\r\n    left: 230px;\r\n}\r\n\r\n.sidebar {\r\n    list-style-type: none;\r\n    width: 100%;\r\n    height: 100%;\r\n    position: fixed;\r\n    top: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    z-index: 0;\r\n    background-color: #2c3e50;\r\n}\r\n\r\n.sidebar_container > img {\r\n    -o-object-fit: contain;\r\n       object-fit: contain;\r\n    width: 100%;\r\n    max-width: 200px;\r\n    margin-bottom: 2em;\r\n}\r\n.sidebar_container {\r\n    max-width: 230px;\r\n    padding-top: 6em;\r\n    align-content: center;\r\n    align-items: center;\r\n    text-align: center;\r\n}\r\n.sidebar_footer {\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 2.5em;\r\n    align-content: center;\r\n    align-items: center;\r\n    text-align: center;\r\n}\r\n.sidebar li {\r\n    background-color: #2c3e50;\r\n    padding: 0.5em;\r\n    color: #fff;\r\n    font-weight: 600;\r\n    transition-property: all;\r\n    transition-duration: 50ms;\r\n    transition-timing-function: ease-in;\r\n    cursor: pointer;\r\n}\r\n\r\n.content {\r\n    height: 100vh;\r\n    min-width: 100%;\r\n    background-color: #34495e;\r\n    position: relative;\r\n    top: 0;\r\n    bottom: 100%;\r\n    left: 0;\r\n    z-index: 1;\r\n    padding: 4em;\r\n    overflow-y: scroll !important;\r\n}\r\n\r\ntable > thead > tr > th {\r\n    color: #fff;\r\n}\r\ntd {\r\n    color: #fff;\r\n}\r\n", ""]);
 
 // exports
 
@@ -18261,7 +18261,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".survey_title {\r\n    color: #fff;\r\n    font-size: 1.2em;\r\n    font-weight: 500;\r\n}\r\n\r\n.survey {\r\n    overflow-y: hidden !important;\r\n}\r\n.survey_card {\r\n    padding: 20px;\r\n    border: none !important;\r\n    border-radius: none !important;\r\n    background-color: #ecf0f1;\r\n    margin-bottom: 30em;\r\n    position: relative;\r\n    z-index: 8;\r\n}\r\n.survey_active {\r\n    display: block;\r\n}\r\n.survey_buttons {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n}\r\n\r\n/* The actual timeline (the vertical ruler) */\r\n.timeline {\r\n    position: relative;\r\n    max-width: 1200px;\r\n    margin: 0 auto;\r\n    z-index: 4;\r\n}\r\n\r\n/* The actual timeline (the vertical ruler) */\r\n.timeline::after {\r\n    content: \"\";\r\n    position: absolute;\r\n    border-left: 6px dotted white;\r\n    top: 0;\r\n    bottom: 0;\r\n    left: 50%;\r\n    margin-left: -3px;\r\n    z-index: 4;\r\n}\r\n.survey_buttons > .btn_survey {\r\n    background-color: #fff;\r\n    padding: 5px;\r\n    margin: 5px;\r\n    text-decoration: none;\r\n    color: #333;\r\n    border: 1px lightgray solid;\r\n}\r\n.btn_survey_active {\r\n    background-color: #fff;\r\n    padding: 5px;\r\n    margin: 5px;\r\n    text-decoration: none;\r\n    color: #333;\r\n    border: 1px lightgray solid;\r\n    display: block;\r\n}\r\n.survey_validations {\r\n    display: flex;\r\n    justify-content: flex-end;\r\n}\r\n.emailValidator {\r\n    background-color: #333;\r\n    color: white;\r\n    margin-top: 10px;\r\n    border-radius: 3px;\r\n}\r\n.emailValidator > p {\r\n    color: white;\r\n    font-size: 14px;\r\n    font-weight: 600;\r\n    text-align: center;\r\n    padding-top: 8px;\r\n    padding-left: 5px;\r\n    padding-right: 5px;\r\n}\r\n.survey_questions {\r\n    color: #333;\r\n    font-size: 1.5em;\r\n    font-weight: 600;\r\n}\r\n.survey_label {\r\n    color: #333;\r\n    font-size: 1.2em;\r\n    font-weight: 500;\r\n}\r\n.survey_answers {\r\n    background: #fff;\r\n    padding: 10px;\r\n    /*border: 0.5px dashed #bdc3c7;*/\r\n}\r\n.survey_answers > textarea,\r\n.survey_answers > input,\r\n.survey_answers > select {\r\n    padding: 10px;\r\n    border-top: none !important;\r\n    border-left: none !important;\r\n    border-right: none !important;\r\n    border-radius: none !important;\r\n    width: 100%;\r\n    border: 1px solid #bdc3c7;\r\n}\r\n\r\n.survey_answers > input:focus,\r\n.survey_answers > textarea:focus,\r\n.survey_answers > select:focus {\r\n    outline: none;\r\n}\r\n/*  Refresh Container */\r\n.refresh {\r\n    position: fixed;\r\n    bottom: 30px;\r\n    right: 20px;\r\n    width: 60px;\r\n    height: 60px;\r\n    background: #fff;\r\n    z-index: 8;\r\n    border-radius: 50%;\r\n    cursor: pointer;\r\n}\r\n/* Refresh Loader */\r\n.refresh > .refresh_loader {\r\n    width: 60px;\r\n    height: 60px;\r\n}\r\n/* Refresh Loader Hover  */\r\n.refresh > .refresh_loader:hover {\r\n    transform: rotate(1080deg);\r\n    transition: all 2s; /* transition when the mouse over */\r\n}\r\n.refresh_loader:after {\r\n    content: \"Recharger la page\";\r\n    position: relative;\r\n    top: 120px;\r\n    left: -14px;\r\n    font-size: 1.25em;\r\n    font-family: helvetica, arial, sans-serif;\r\n    font-variant: small-caps;\r\n    color: #fff;\r\n    opacity: 0;\r\n    transition: opacity 2s;\r\n}\r\n", ""]);
+exports.push([module.i, ".survey_title {\r\n    color: #fff;\r\n    font-size: 1.2em;\r\n    font-weight: 500;\r\n}\r\n* {\r\n    overflow: hidden;\r\n}\r\n.survey_card {\r\n    padding: 20px;\r\n    border: none !important;\r\n    border-radius: none !important;\r\n    background-color: #ecf0f1;\r\n    margin-bottom: 30em;\r\n    position: relative;\r\n    z-index: 8;\r\n}\r\n.survey_active {\r\n    display: block;\r\n}\r\n.survey_buttons {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n}\r\n\r\n/* The actual timeline (the vertical ruler) */\r\n.timeline {\r\n    position: relative;\r\n    max-width: 1200px;\r\n    margin: 0 auto;\r\n    z-index: 4;\r\n}\r\n\r\n/* The actual timeline (the vertical ruler) */\r\n.timeline::after {\r\n    content: \"\";\r\n    position: absolute;\r\n    border-left: 6px dotted white;\r\n    top: 0;\r\n    bottom: 0;\r\n    left: 50%;\r\n    margin-left: -3px;\r\n    z-index: 4;\r\n}\r\n.survey_buttons > .btn_survey {\r\n    background-color: #fff;\r\n    padding: 5px;\r\n    margin: 5px;\r\n    text-decoration: none;\r\n    color: #333;\r\n    border: 1px lightgray solid;\r\n}\r\n.btn_survey_active {\r\n    background-color: #fff;\r\n    padding: 5px;\r\n    margin: 5px;\r\n    text-decoration: none;\r\n    color: #333;\r\n    border: 1px lightgray solid;\r\n    display: block;\r\n}\r\n.survey_validations {\r\n    text-align: right;\r\n}\r\n.emailValidator {\r\n    background-color: #333;\r\n    color: white;\r\n    margin-top: 10px;\r\n    border-radius: 3px;\r\n}\r\n.emailValidator > p {\r\n    color: white;\r\n    font-size: 14px;\r\n    font-weight: 600;\r\n    text-align: center;\r\n    padding-top: 8px;\r\n    padding-left: 5px;\r\n    padding-right: 5px;\r\n}\r\n.survey_questions {\r\n    color: #333;\r\n    font-size: 1.5em;\r\n    font-weight: 600;\r\n}\r\n.survey_label {\r\n    color: #333;\r\n    font-size: 1.2em;\r\n    font-weight: 500;\r\n}\r\n.survey_answers {\r\n    background: #fff;\r\n    padding: 10px;\r\n    /*border: 0.5px dashed #bdc3c7;*/\r\n}\r\n.survey_answers > textarea,\r\n.survey_answers > input,\r\n.survey_answers > select {\r\n    padding: 10px;\r\n    border-top: none !important;\r\n    border-left: none !important;\r\n    border-right: none !important;\r\n    border-radius: none !important;\r\n    width: 100%;\r\n    border: 1px solid #bdc3c7;\r\n}\r\n\r\n.survey_answers > input:focus,\r\n.survey_answers > textarea:focus,\r\n.survey_answers > select:focus {\r\n    outline: none;\r\n}\r\n/*  Refresh Container */\r\n.refresh {\r\n    position: fixed;\r\n    bottom: 30px;\r\n    right: 20px;\r\n    width: 60px;\r\n    height: 60px;\r\n    background: #fff;\r\n    z-index: 8;\r\n    border-radius: 50%;\r\n    cursor: pointer;\r\n}\r\n/* Refresh Loader */\r\n.refresh > .refresh_loader {\r\n    width: 60px;\r\n    height: 60px;\r\n}\r\n/* Refresh Loader Hover  */\r\n.refresh > .refresh_loader:hover {\r\n    transform: rotate(1080deg);\r\n    transition: all 2s; /* transition when the mouse over */\r\n}\r\n.refresh_loader:after {\r\n    content: \"Recharger la page\";\r\n    position: relative;\r\n    top: 120px;\r\n    left: -14px;\r\n    font-size: 1.25em;\r\n    font-family: helvetica, arial, sans-serif;\r\n    font-variant: small-caps;\r\n    color: #fff;\r\n    opacity: 0;\r\n    transition: opacity 2s;\r\n}\r\n", ""]);
 
 // exports
 
@@ -81422,7 +81422,7 @@ var Buttons = function Buttons(_ref) {
     className: "btn_survey",
     type: "button",
     onClick: onSubmitEmail
-  }, "Suivant") : surveyId > 1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Suivant") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "survey_buttons"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "btn_survey",
@@ -81454,38 +81454,10 @@ var Buttons = function Buttons(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Input_Input_Input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Input/Input/Input */ "./resources/js/components/FrontUI/Input/Input/Input.js");
-/* harmony import */ var _Buttons_Buttons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Buttons/Buttons */ "./resources/js/components/FrontUI/Buttons/Buttons.js");
-/* harmony import */ var _Validations_Validations__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Validations/Validations */ "./resources/js/components/FrontUI/Validations/Validations.js");
-/* harmony import */ var _CardHeader_CardHeader__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../CardHeader/CardHeader */ "./resources/js/components/FrontUI/CardHeader/CardHeader.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_6__);
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-
+/* harmony import */ var _Input_Input_Input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Input/Input/Input */ "./resources/js/components/FrontUI/Input/Input/Input.js");
+/* harmony import */ var _Buttons_Buttons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Buttons/Buttons */ "./resources/js/components/FrontUI/Buttons/Buttons.js");
+/* harmony import */ var _Validations_Validations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Validations/Validations */ "./resources/js/components/FrontUI/Validations/Validations.js");
+/* harmony import */ var _CardHeader_CardHeader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../CardHeader/CardHeader */ "./resources/js/components/FrontUI/CardHeader/CardHeader.js");
 
 
 
@@ -81496,66 +81468,16 @@ var Card = function Card(_ref) {
   var data = _ref.data,
       isAnswer = _ref.isAnswer,
       disabled = _ref.disabled,
-      setDisabled = _ref.setDisabled;
-
-  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState([]),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      dataForm = _React$useState2[0],
-      setDataForm = _React$useState2[1];
-
-  var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(""),
-      _React$useState4 = _slicedToArray(_React$useState3, 2),
-      emailValidator = _React$useState4[0],
-      setEmailValidator = _React$useState4[1];
-
-  var _React$useState5 = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(0),
-      _React$useState6 = _slicedToArray(_React$useState5, 2),
-      userId = _React$useState6[0],
-      setUserId = _React$useState6[1];
-
-  var _React$useState7 = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(""),
-      _React$useState8 = _slicedToArray(_React$useState7, 2),
-      errorsMessage = _React$useState8[0],
-      setErrorsMessage = _React$useState8[1];
-
+      emailValidator = _ref.emailValidator,
+      errorsMessage = _ref.errorsMessage,
+      setDisabled = _ref.setDisabled,
+      onSubmitEmail = _ref.onSubmitEmail,
+      onChangeFormInput = _ref.onChangeFormInput,
+      submitSurvey = _ref.submitSurvey;
   var cardRef = data.reduce(function (acc, value) {
     acc[value.id] = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
     return acc;
   }, {});
-
-  var onSubmitEmail = function onSubmitEmail(e) {
-    var _dataForm$, _email$email;
-
-    e.preventDefault();
-    var email = {
-      email: (_dataForm$ = dataForm[1]) === null || _dataForm$ === void 0 ? void 0 : _dataForm$.answer
-    };
-
-    if (((_email$email = email.email) === null || _email$email === void 0 ? void 0 : _email$email.length) > 0) {
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("/email", email).then(function (response) {
-        if (response.data.error) {
-          sweetalert2__WEBPACK_IMPORTED_MODULE_6___default.a.fire({
-            title: "Oops.. une erreur est survenue!",
-            text: response.data.error,
-            icon: "error",
-            showConfirmButton: true,
-            showCancelButton: false,
-            showCloseButton: false
-          });
-          setDisabled(response.data.disabled);
-        } else {
-          setEmailValidator(response.data.message);
-          setUserId(response.data.id);
-
-          if (response.data.isValid === true) {
-            window.scrollTo(0, document.querySelector(".survey_card").scrollHeight + 420);
-          }
-        }
-      });
-    } else {
-      setEmailValidator("Veuillez remplir ce champ !");
-    }
-  };
 
   var nextRefCard = function nextRefCard(id) {
     return window.scrollTo(0, cardRef[id + 1].current.offsetTop);
@@ -81563,54 +81485,6 @@ var Card = function Card(_ref) {
 
   var previousRefCard = function previousRefCard(id) {
     return window.scrollTo(0, cardRef[id - 1].current.offsetTop);
-  };
-
-  var onChangeFormInput = function onChangeFormInput(e, id) {
-    var target = e.target;
-    var value = target.value;
-
-    var form = _toConsumableArray(dataForm);
-
-    form[id] = {
-      id: id,
-      answer: value
-    };
-    setDataForm(form);
-  };
-
-  var submitSurvey = function submitSurvey(e) {
-    e.preventDefault();
-    dataForm.shift();
-    axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("/answers", {
-      answers: dataForm,
-      userId: userId
-    }).then(function (response) {
-      sweetalert2__WEBPACK_IMPORTED_MODULE_6___default.a.fire({
-        title: "Good Job !",
-        html: "<p>".concat(response.data.text, "</p>"),
-        footer: "<a href=\"http://".concat(window.location.host, "/reponses/").concat(response.data.url, "\">Voir mes r\xE9ponses</a>"),
-        icon: "success",
-        showConfirmButton: false,
-        showCancelButton: false,
-        showCloseButton: false
-      });
-    })["catch"](function (error) {
-      var status = error.response.status;
-      var messages = error.response.data.errors;
-
-      if (_typeof(messages) === "object") {
-        Object.keys(messages).forEach(function (index) {
-          setErrorsMessage(messages[index][0]);
-        });
-        sweetalert2__WEBPACK_IMPORTED_MODULE_6___default.a.fire({
-          title: "Oops..une erreur est survenue",
-          html: "<p>".concat(messages.answers, "</p>"),
-          icon: "error"
-        });
-      } else {
-        alert("Une erreur est survenue (" + status + ")");
-      }
-    });
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
@@ -81622,17 +81496,17 @@ var Card = function Card(_ref) {
       className: "survey_card",
       key: d.id,
       ref: cardRef[d.id]
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CardHeader_CardHeader__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CardHeader_CardHeader__WEBPACK_IMPORTED_MODULE_4__["default"], {
       survey: d.survey,
       surveyId: d.survey.id
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "survey_answers"
-    }, d.label), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    }, d.label), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_2__["default"], {
       surveyId: d.id,
       nextRefCard: nextRefCard,
       isAnswer: isAnswer
     }));
-  }) : data.map(function (survey) {
+  }) : data.map(function (survey, i) {
     var _survey$option;
 
     // convertis notre chaîne de caractère d'option en tableau si l'option n'est pas null
@@ -81641,23 +81515,25 @@ var Card = function Card(_ref) {
       className: "survey_card",
       key: survey.id,
       ref: cardRef[survey.id]
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CardHeader_CardHeader__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CardHeader_CardHeader__WEBPACK_IMPORTED_MODULE_4__["default"], {
       survey: survey,
       surveyId: survey.id
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input_Input_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
       options: options,
       onChangeFormInput: onChangeFormInput,
       surveyId: survey.id,
       disabled: disabled
-    }), emailValidator && emailValidator.length > 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Validations_Validations__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }), emailValidator && emailValidator.length > 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Validations_Validations__WEBPACK_IMPORTED_MODULE_3__["default"], {
       errorsMessage: errorsMessage,
       emailValidator: emailValidator,
-      surveyId: survey.id
-    }) : errorsMessage && errorsMessage.length > 0( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Validations_Validations__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      surveyId: survey.id,
+      index: i
+    }) : errorsMessage && errorsMessage.length > 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Validations_Validations__WEBPACK_IMPORTED_MODULE_3__["default"], {
       errorsMessage: errorsMessage,
       emailValidator: emailValidator,
-      surveyId: survey.id
-    })), disabled === false && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      surveyId: survey.id,
+      index: i
+    }), disabled === false && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Buttons_Buttons__WEBPACK_IMPORTED_MODULE_2__["default"], {
       surveyId: survey.id,
       nextRefCard: nextRefCard,
       previousRefCard: previousRefCard,
@@ -81920,14 +81796,15 @@ __webpack_require__.r(__webpack_exports__);
 var Validations = function Validations(_ref) {
   var surveyId = _ref.surveyId,
       emailValidator = _ref.emailValidator,
-      errorsMessage = _ref.errorsMessage;
+      errorsMessage = _ref.errorsMessage,
+      index = _ref.index;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "survey_validations"
-  }, surveyId === 1 && emailValidator.length > 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "emailValidator errors"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, emailValidator)), errorsMessage.length > 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, errorsMessage.length > 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "errors"
-  }, errorsMessage));
+  }, errorsMessage), surveyId === 1 && emailValidator.length > 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "emailValidator errors"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, emailValidator)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Validations);
@@ -81980,9 +81857,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _screens_Answers_Answers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../screens/Answers/Answers */ "./resources/js/screens/Answers/Answers.js");
 /* harmony import */ var _screens_Protected_Admin_Admin__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../screens/Protected/Admin/Admin */ "./resources/js/screens/Protected/Admin/Admin.js");
 /* harmony import */ var _screens_Login_Login__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../screens/Login/Login */ "./resources/js/screens/Login/Login.js");
-/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./App.css */ "./resources/js/router/App.css");
-/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_App_css__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _screens_NotFound_NotFound__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../screens/NotFound/NotFound */ "./resources/js/screens/NotFound/NotFound.js");
+/* harmony import */ var _screens_NotFound_NotFound__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../screens/NotFound/NotFound */ "./resources/js/screens/NotFound/NotFound.js");
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./App.css */ "./resources/js/router/App.css");
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_App_css__WEBPACK_IMPORTED_MODULE_7__);
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
@@ -82014,7 +81891,7 @@ var App = function App() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     component: _screens_Protected_Admin_Admin__WEBPACK_IMPORTED_MODULE_4__["default"]
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-    component: _screens_NotFound_NotFound__WEBPACK_IMPORTED_MODULE_7__["default"]
+    component: _screens_NotFound_NotFound__WEBPACK_IMPORTED_MODULE_6__["default"]
   }))));
 };
 
@@ -82605,9 +82482,9 @@ var Answer = function Answer(_ref) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "row"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "row"
+      className: "col-12 ml-1"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-      className: "display-4 text-white"
+      className: "h1 text-white"
     }, a.username)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "col-10"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
@@ -82793,6 +82670,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_FrontUI_Card_Card__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/FrontUI/Card/Card */ "./resources/js/components/FrontUI/Card/Card.js");
 /* harmony import */ var _components_FrontUI_Header_Header__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/FrontUI/Header/Header */ "./resources/js/components/FrontUI/Header/Header.js");
 /* harmony import */ var _components_FrontUI_Refresh_Refresh__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/FrontUI/Refresh/Refresh */ "./resources/js/components/FrontUI/Refresh/Refresh.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_7__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -82813,6 +82702,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 var Surveys = function Surveys() {
   var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState([]),
       _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -82824,12 +82714,126 @@ var Surveys = function Surveys() {
       disabled = _React$useState4[0],
       setDisabled = _React$useState4[1];
 
+  var _React$useState5 = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState([]),
+      _React$useState6 = _slicedToArray(_React$useState5, 2),
+      dataForm = _React$useState6[0],
+      setDataForm = _React$useState6[1];
+
+  var _React$useState7 = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(""),
+      _React$useState8 = _slicedToArray(_React$useState7, 2),
+      emailValidator = _React$useState8[0],
+      setEmailValidator = _React$useState8[1];
+
+  var _React$useState9 = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(0),
+      _React$useState10 = _slicedToArray(_React$useState9, 2),
+      userId = _React$useState10[0],
+      setUserId = _React$useState10[1];
+
+  var _React$useState11 = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState({}),
+      _React$useState12 = _slicedToArray(_React$useState11, 2),
+      errorsMessage = _React$useState12[0],
+      setErrorsMessage = _React$useState12[1];
+
   react__WEBPACK_IMPORTED_MODULE_0___default.a.useEffect(function () {
     axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/surveys").then(function (response) {
       setSurveys(response.data);
     });
   }, []);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_FrontUI_Header_Header__WEBPACK_IMPORTED_MODULE_5__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  /** Check if email is equal to an email into database */
+
+  var onSubmitEmail = function onSubmitEmail(e) {
+    var _dataForm$, _email$email;
+
+    e.preventDefault();
+    var email = {
+      email: (_dataForm$ = dataForm[1]) === null || _dataForm$ === void 0 ? void 0 : _dataForm$.answer
+    };
+
+    if (((_email$email = email.email) === null || _email$email === void 0 ? void 0 : _email$email.length) > 0) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("/email", email).then(function (response) {
+        if (response.data.error) {
+          sweetalert2__WEBPACK_IMPORTED_MODULE_7___default.a.fire({
+            title: "Oops.. une erreur est survenue!",
+            text: response.data.error,
+            icon: "error",
+            showConfirmButton: true,
+            showCancelButton: false,
+            showCloseButton: false
+          });
+          setDisabled(response.data.disabled);
+        } else {
+          setEmailValidator(response.data.message);
+          setUserId(response.data.id);
+
+          if (response.data.isValid === true) {
+            window.scrollTo(0, document.querySelector(".survey_card").scrollHeight + 420);
+          }
+        }
+      });
+    } else {
+      setEmailValidator("Veuillez remplir ce champ !");
+    }
+  };
+  /** Add form data into an array from the loop  */
+
+
+  var onChangeFormInput = function onChangeFormInput(e, id) {
+    var target = e.target;
+    var value = target.value;
+
+    var form = _toConsumableArray(dataForm);
+
+    form[id] = {
+      id: id,
+      answer: value
+    };
+    setDataForm(form);
+  };
+  /** Submit survey with answers to the back API */
+
+
+  var submitSurvey = function submitSurvey(e) {
+    e.preventDefault();
+    dataForm.shift();
+    console.log(dataForm);
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("/answers", {
+      answers: dataForm,
+      userId: userId
+    }).then(function (response) {
+      sweetalert2__WEBPACK_IMPORTED_MODULE_7___default.a.fire({
+        title: "Good Job !",
+        html: "<p>".concat(response.data.text, "</p>"),
+        footer: "<a href=\"http://".concat(window.location.host, "/reponses/").concat(response.data.url, "\">Voir mes r\xE9ponses</a>"),
+        icon: "success",
+        showConfirmButton: false,
+        showCancelButton: false,
+        showCloseButton: false
+      });
+    })["catch"](function (error) {
+      var status = error.response.status;
+      var messages = error.response.data.errors;
+
+      if (_typeof(messages) === "object") {
+        Object.keys(messages).forEach(function (index) {
+          return (
+            /*errorsMessage[index] = messages[index][0]*/
+            setErrorsMessage("Veuillez remplir ce champ.")
+          );
+        });
+        sweetalert2__WEBPACK_IMPORTED_MODULE_7___default.a.fire({
+          title: "Oops..une erreur est survenue",
+          html: "<p>".concat(messages.answers, "</p>"),
+          icon: "error"
+        });
+      } else {
+        alert("Une erreur est survenue (" + status + ")");
+      }
+    });
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "survey"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_FrontUI_Header_Header__WEBPACK_IMPORTED_MODULE_5__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "row justify-content-center"
@@ -82840,7 +82844,12 @@ var Surveys = function Surveys() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_FrontUI_Title_Title__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_FrontUI_Card_Card__WEBPACK_IMPORTED_MODULE_4__["default"], {
     data: surveys,
     disabled: disabled,
-    setDisabled: setDisabled
+    setDisabled: setDisabled,
+    onSubmitEmail: onSubmitEmail,
+    onChangeFormInput: onChangeFormInput,
+    submitSurvey: submitSurvey,
+    emailValidator: emailValidator,
+    errorsMessage: errorsMessage
   })))));
 };
 
