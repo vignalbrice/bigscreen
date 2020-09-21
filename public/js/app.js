@@ -82526,8 +82526,14 @@ var Dashboard = function Dashboard(_ref) {
       radarCharts = _ref.radarCharts;
 
   var PieCharts = function PieCharts() {
-    return pieCharts.map(function (pc, i) {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "row pieCharts"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "col-12"
+    }, pieCharts.length > 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      className: "h1 text-white"
+    }, "Equipement")), pieCharts.map(function (pc, i) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-md-5 col-lg-5 col-sm-3 col-xs-3",
         key: i
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -82547,35 +82553,53 @@ var Dashboard = function Dashboard(_ref) {
           })
         },
         key: i
-      }))));
-    });
+      })));
+    }));
   };
 
   var RadarCharts = function RadarCharts() {
-    return radarCharts === null || radarCharts === void 0 ? void 0 : radarCharts.map(function (rc, index) {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-md-5 col-lg-5 col-sm-3 col-xs-3",
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "row radarCharts"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "col-12"
+    }, radarCharts.length > 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      className: "h1 text-white"
+    }, "Qualit\xE9")), radarCharts === null || radarCharts === void 0 ? void 0 : radarCharts.map(function (rc, index) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-10 col-sm-12 col-xs-12",
         key: index
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card mb-3"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["Radar"], {
         data: {
           datasets: [{
-            data: rc.data.datasets[0].data.map(function (i) {
-              return i;
+            data: rc.data.datasets.map(function (d) {
+              return d;
             }),
             backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
             hoverBackgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
-            label: rc.title
+            label: "Notes de qualités"
           }],
           // These labels appear in the legend and in the tooltips when hovering different arcs
           labels: rc.data.labels.map(function (l) {
             return l;
           })
         },
-        key: index
-      }))));
-    });
+        key: index,
+        options: {
+          scale: {
+            angleLines: {
+              display: false
+            },
+            ticks: {
+              max: 5,
+              min: 0,
+              stepSize: 1
+            }
+          }
+        }
+      })));
+    }));
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PieCharts, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(RadarCharts, null));

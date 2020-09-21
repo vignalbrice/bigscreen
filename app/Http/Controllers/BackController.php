@@ -70,13 +70,13 @@ class BackController extends Controller
     }
     public function getChartsAnswers()
     {
-        $pie6 = $this->getChartsByCountAndAnswer(6);
-        $pie7 = $this->getChartsByCountAndAnswer(7);
-        $pie10 = $this->getChartsByCountAndAnswer(10);
-        $radar = $this->getRadarChartData();
+        $pie6 = $this->getChartsByCountAndAnswers(6);
+        $pie7 = $this->getChartsByCountAndAnswers(7);
+        $pie10 = $this->getChartsByCountAndAnswers(10);
+        $radar = $this->getRadarChartsByCountAndAnswers();
         return response()->json(["pie" => [$pie6, $pie7, $pie10], "radar" => $radar]);
     }
-    protected function getChartsByCountAndAnswer($id)
+    protected function getChartsByCountAndAnswers($id)
     {
         $answer = new Answer();
         $survey = new Survey();
@@ -96,41 +96,42 @@ class BackController extends Controller
         }
         return $stats;
     }
-    public function getRadarChartData()
+
+    public function getRadarChartsByCountAndAnswers()
     {
         $idQuestionList = [11, 12, 13, 14, 15];
+        /* Get count of user who answered survey */
+        $userWhoAnswered                            = User::whereNotNull('url')->count();
+        // Survey elements
+        $questionData_elt                   = [];
+        // Push title and id
+        $questionData_elt['data']                   = [];
+        /* Labels */
+        $questionData_elt['data']['labels']         = ['Qualité de l\'image', 'Confort de l\'utilisation', 'Connection réseau', 'Qualité des graphismes', 'Qualité audio'];
+        /* Datasets */
+        $questionData_elt['data']['datasets']       = [];
         // Get title of question
         $questionData                       = [];
         foreach ($idQuestionList as $idQuestion) {
-            $questionInfo                       = Survey::with(['answers'])->where('id', $idQuestion)->get()->toArray();
-            $questionData_elt                   = [];
-            foreach ($questionInfo as $thisQuestion) {
-                // Push title and id
-                $questionData_elt['title']                  = $thisQuestion['label'];
-                $questionData_elt['id']                     = $idQuestion;
-                $questionData_elt['data']                   = [];
-                /* Labels */
-                $questionData_elt['data']['labels']         = [];
-                /* Datasets */
-                $questionData_elt['data']['datasets']       = [];
-                $datasetsArray                              = [];
-                $datasetsArray['data']                      = [];
-                // Get options
-                $temp_choice                = explode(', ', $thisQuestion['option']);
+            // Question Info
+            $questionInfo                       = Survey::with(['answers'])->where('id', $idQuestion)->first();
 
-                foreach ($temp_choice as $choice) {
-                    // Get count of each option by idQuestion
-                    $temp                   = Answer::with('survey')->where([['label', $choice], ['survey_id', $idQuestion]])->count();
-                    // Push all data in final result
-                    array_push($questionData_elt['data']['labels'], $choice);
-                    if (strlen($temp) > 0) {
-                        array_push($datasetsArray['data'], $temp);
-                    }
-                }
-                array_push($questionData_elt['data']['datasets'], $datasetsArray);
+            // SUM of array
+            $sum                                        =   0;
+            // Get options
+            $answers                = explode(', ', $questionInfo['option']);
+            foreach ($answers as $choice) {
+                // Get count of each option by idQuestion
+                $temp                   = Answer::with('survey')->where([['label', $choice], ['survey_id', $idQuestion]])->count();
+                // Push all data in final result
+                $choice_int             = (int) $choice;
+                $sum                    += $choice_int * $temp;
             }
-            array_push($questionData, $questionData_elt);
+            $avg                     = round($sum / $userWhoAnswered, 2);
+            array_push($questionData_elt['data']['datasets'], $avg);
         }
+        array_push($questionData, $questionData_elt);
+
         return $questionData;
     }
     /**
