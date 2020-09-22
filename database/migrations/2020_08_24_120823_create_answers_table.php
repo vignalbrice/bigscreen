@@ -15,10 +15,12 @@ class CreateAnswersTable extends Migration
     {
         Schema::create('answers', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('survey_id');
-            $table->foreign('survey_id')->references('id')->on('surveys')->onDelete('SET NULL');
+            $table->integer('survey_id')->unsigned();
             $table->string('label');
             $table->timestamps();
+        });
+        Schema::table('answers', function ($table) {
+            $table->foreign('survey_id')->references('id')->on('surveys');
         });
     }
 
