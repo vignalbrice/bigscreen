@@ -14,7 +14,7 @@ class CreateSurveysTable extends Migration
     public function up()
     {
         Schema::create('surveys', function (Blueprint $table) {
-            $table->id();
+            $table->increments("id");
             $table->enum('survey_type', ['A', 'B', 'C']);
             $table->string('label');
             $table->string('option')->nullable();
