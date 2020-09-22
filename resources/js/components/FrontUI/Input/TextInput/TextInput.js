@@ -1,17 +1,9 @@
 import React from "react";
-import Select from "../Select/Select";
 
-const Input = ({ surveyId, onChangeFormInput, options, disabled }) => {
+const TextInput = ({ surveyId, onChangeFormInput, disabled }) => {
     return (
-        <div className="survey_answers">
-            {options !== undefined ? (
-                <Select
-                    options={options}
-                    onChangeFormInput={onChangeFormInput}
-                    surveyId={surveyId}
-                    disabled={disabled}
-                />
-            ) : surveyId === 20 ? (
+        <>
+            {surveyId === 20 ? (
                 <textarea
                     onChange={e => onChangeFormInput(e, surveyId)}
                     cols={10}
@@ -19,6 +11,7 @@ const Input = ({ surveyId, onChangeFormInput, options, disabled }) => {
                     placeholder="Remplissez ce champ"
                     maxLength={255}
                     disabled={disabled && disabled}
+                    required
                 />
             ) : (
                 <>
@@ -40,11 +33,12 @@ const Input = ({ surveyId, onChangeFormInput, options, disabled }) => {
                         }
                         maxLength={255}
                         disabled={disabled && disabled}
+                        required
                     />
                 </>
             )}
-        </div>
+        </>
     );
 };
 
-export default Input;
+export default TextInput;

@@ -81454,7 +81454,7 @@ var Buttons = function Buttons(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Input_Input_Input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Input/Input/Input */ "./resources/js/components/FrontUI/Input/Input/Input.js");
+/* harmony import */ var _Input_Input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Input/Input */ "./resources/js/components/FrontUI/Input/Input.js");
 /* harmony import */ var _Buttons_Buttons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Buttons/Buttons */ "./resources/js/components/FrontUI/Buttons/Buttons.js");
 /* harmony import */ var _Validations_Validations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Validations/Validations */ "./resources/js/components/FrontUI/Validations/Validations.js");
 /* harmony import */ var _CardHeader_CardHeader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../CardHeader/CardHeader */ "./resources/js/components/FrontUI/CardHeader/CardHeader.js");
@@ -81518,7 +81518,7 @@ var Card = function Card(_ref) {
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CardHeader_CardHeader__WEBPACK_IMPORTED_MODULE_4__["default"], {
       survey: survey,
       surveyId: survey.id
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input_Input_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
       options: options,
       onChangeFormInput: onChangeFormInput,
       surveyId: survey.id,
@@ -81635,10 +81635,10 @@ var Header = function Header() {
 
 /***/ }),
 
-/***/ "./resources/js/components/FrontUI/Input/Input/Input.js":
-/*!**************************************************************!*\
-  !*** ./resources/js/components/FrontUI/Input/Input/Input.js ***!
-  \**************************************************************/
+/***/ "./resources/js/components/FrontUI/Input/Input.js":
+/*!********************************************************!*\
+  !*** ./resources/js/components/FrontUI/Input/Input.js ***!
+  \********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -81646,7 +81646,9 @@ var Header = function Header() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Select_Select__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Select/Select */ "./resources/js/components/FrontUI/Input/Select/Select.js");
+/* harmony import */ var _TextInput_TextInput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TextInput/TextInput */ "./resources/js/components/FrontUI/Input/TextInput/TextInput.js");
+/* harmony import */ var _Select_Select__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Select/Select */ "./resources/js/components/FrontUI/Input/Select/Select.js");
+
 
 
 
@@ -81657,29 +81659,16 @@ var Input = function Input(_ref) {
       disabled = _ref.disabled;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "survey_answers"
-  }, options !== undefined ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Select_Select__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, options !== undefined ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Select_Select__WEBPACK_IMPORTED_MODULE_2__["default"], {
     options: options,
     onChangeFormInput: onChangeFormInput,
     surveyId: surveyId,
     disabled: disabled
-  }) : surveyId === 20 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
-    onChange: function onChange(e) {
-      return onChangeFormInput(e, surveyId);
-    },
-    cols: 10,
-    rows: 2,
-    placeholder: "Remplissez ce champ",
-    maxLength: 255,
-    disabled: disabled && disabled
-  }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: surveyId === 1 ? "email" : surveyId === 2 ? "number" : "text",
-    onChange: function onChange(e) {
-      return onChangeFormInput(e, surveyId);
-    },
-    placeholder: surveyId === 1 ? "Renseignez votre email" : surveyId === 2 ? "Renseignez votre age" : "Remplissez ce champ",
-    maxLength: 255,
-    disabled: disabled && disabled
-  })));
+  }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TextInput_TextInput__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    disabled: disabled,
+    onChangeFormInput: onChangeFormInput,
+    surveyId: surveyId
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Input);
@@ -81709,7 +81698,8 @@ var Select = function Select(_ref) {
     onChange: function onChange(e) {
       return onChangeFormInput(e, surveyId);
     },
-    disabled: disabled && disabled
+    disabled: disabled && disabled,
+    required: true
   }, options === null || options === void 0 ? void 0 : options.map(function (option, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
       value: option,
@@ -81719,6 +81709,49 @@ var Select = function Select(_ref) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Select);
+
+/***/ }),
+
+/***/ "./resources/js/components/FrontUI/Input/TextInput/TextInput.js":
+/*!**********************************************************************!*\
+  !*** ./resources/js/components/FrontUI/Input/TextInput/TextInput.js ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var TextInput = function TextInput(_ref) {
+  var surveyId = _ref.surveyId,
+      onChangeFormInput = _ref.onChangeFormInput,
+      disabled = _ref.disabled;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, surveyId === 20 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+    onChange: function onChange(e) {
+      return onChangeFormInput(e, surveyId);
+    },
+    cols: 10,
+    rows: 2,
+    placeholder: "Remplissez ce champ",
+    maxLength: 255,
+    disabled: disabled && disabled,
+    required: true
+  }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: surveyId === 1 ? "email" : surveyId === 2 ? "number" : "text",
+    onChange: function onChange(e) {
+      return onChangeFormInput(e, surveyId);
+    },
+    placeholder: surveyId === 1 ? "Renseignez votre email" : surveyId === 2 ? "Renseignez votre age" : "Remplissez ce champ",
+    maxLength: 255,
+    disabled: disabled && disabled,
+    required: true
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (TextInput);
 
 /***/ }),
 
@@ -82788,7 +82821,9 @@ var Surveys = function Surveys() {
           setUserId(response.data.id);
 
           if (response.data.isValid === true) {
-            window.scrollTo(0, document.querySelector(".survey_card").scrollHeight + 420);
+            setTimeout(function () {
+              window.scrollTo(0, document.querySelector(".survey_card").scrollHeight + 420);
+            }, 900);
           }
         }
       });
@@ -82837,10 +82872,7 @@ var Surveys = function Surveys() {
 
       if (_typeof(messages) === "object") {
         Object.keys(messages).forEach(function (index) {
-          return (
-            /*errorsMessage[index] = messages[index][0]*/
-            setErrorsMessage("Veuillez remplir ce champ.")
-          );
+          return setErrorsMessage("Veuillez remplir ce champ.");
         });
         sweetalert2__WEBPACK_IMPORTED_MODULE_7___default.a.fire({
           title: "Oops..une erreur est survenue",

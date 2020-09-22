@@ -1,5 +1,5 @@
 import React from "react";
-import Input from "../Input/Input/Input";
+import Input from "../Input/Input";
 import Buttons from "../Buttons/Buttons";
 import Validations from "../Validations/Validations";
 import CardHeader from "../CardHeader/CardHeader";

@@ -6,6 +6,7 @@ const Select = ({ options, onChangeFormInput, surveyId, disabled }) => {
             size={5}
             onChange={e => onChangeFormInput(e, surveyId)}
             disabled={disabled && disabled}
+            required
         >
             {options?.map((option, index) => (
                 <option value={option} key={index}>

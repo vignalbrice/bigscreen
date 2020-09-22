@@ -40,11 +40,13 @@ const Surveys = () => {
                     setEmailValidator(response.data.message);
                     setUserId(response.data.id);
                     if (response.data.isValid === true) {
-                        window.scrollTo(
-                            0,
-                            document.querySelector(".survey_card")
-                                .scrollHeight + 420
-                        );
+                        setTimeout(() => {
+                            window.scrollTo(
+                                0,
+                                document.querySelector(".survey_card")
+                                    .scrollHeight + 420
+                            );
+                        }, 900);
                     }
                 }
             });
@@ -85,9 +87,7 @@ const Surveys = () => {
                 let messages = error.response.data.errors;
                 if (typeof messages === "object") {
                     Object.keys(messages).forEach(index =>
-                        /*errorsMessage[index] = messages[index][0]*/ setErrorsMessage(
-                            "Veuillez remplir ce champ."
-                        )
+                        setErrorsMessage("Veuillez remplir ce champ.")
                     );
                     Swal.fire({
                         title: "Oops..une erreur est survenue",
