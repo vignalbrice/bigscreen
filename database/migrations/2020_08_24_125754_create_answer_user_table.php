@@ -14,9 +14,9 @@ class CreateAnswerUserTable extends Migration
     public function up()
     {
         Schema::create('answer_user', function (Blueprint $table) {
-            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('SET NULL');
-            $table->unsignedInteger('answer_id');
+            $table->unsignedInteger('answer_id')->nullable();
             $table->foreign('answer_id')->references('id')->on('answers')->onDelete('SET NULL');
         });
     }
