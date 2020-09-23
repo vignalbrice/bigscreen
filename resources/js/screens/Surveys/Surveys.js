@@ -14,7 +14,8 @@ const Surveys = () => {
     const [emailValidator, setEmailValidator] = React.useState("");
     const [userId, setUserId] = React.useState(0);
     const [errorsMessage, setErrorsMessage] = React.useState({});
-
+    const PROD_URL = `www.${location.host}/reponses`;
+    const DEV_URL = `${location.host}/reponses`;
     React.useEffect(() => {
         axios.get("/surveys").then(response => {
             setSurveys(response.data);
@@ -74,7 +75,7 @@ const Surveys = () => {
                 Swal.fire({
                     title: "Good Job !",
                     html: `<p>${response.data.text}</p>`,
-                    footer: `<a href="${location.protocol}://${location.host}/reponses/${response.data.url}">Voir mes réponses</a>`,
+                    footer: `<a href="${PROD_URL}/${response.data.url}">Voir mes réponses</a>`,
                     icon: "success",
                     showConfirmButton: false,
                     showCancelButton: false,
