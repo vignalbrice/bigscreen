@@ -5,23 +5,27 @@ import "./Login.css";
 import Swal from "sweetalert2";
 
 const Login = () => {
+    /** Get email and password field by data object */
     const [data, setData] = React.useState({
         email: "",
         password: ""
     });
     // Store pathname dashboard
     let redirect = "/dashboard";
-
+    /** History to navigate into application */
     const history = useHistory();
+    /** Errors to set errors if is existed */
     const [errors, setErrors] = React.useState(null);
+    /** Ref to access into Element */
     const emailRef = React.useRef();
     const passwordRef = React.useRef();
-
+    /**  Function allows user to change data value object by input */
     const onChangeData = e => {
         const newState = { ...data };
         newState[e.target.name] = e.target.value;
         setData(newState);
     };
+    /** Function submit all data and send it into API*/
     const onSubmit = e => {
         e.preventDefault();
         const auth = {
@@ -51,7 +55,7 @@ const Login = () => {
                 passwordRef.current.value = "";
             });
     };
-
+    /** Component Mounted execute theses arguments */
     React.useEffect(() => {
         if (localStorage.getItem("message")) {
             let message = localStorage.getItem("message");

@@ -16,6 +16,6 @@ class Survey extends Model
     ];
     public function answers()
     {
-        return $this->hasMany(Answer::class); // relaction hasMany pour lié plusieurs produits a une catégorie
+        return $this->hasMany(Answer::class); // relaction hasMany pour lié plusieurs réponses a un seul questionnaire
     }
 }

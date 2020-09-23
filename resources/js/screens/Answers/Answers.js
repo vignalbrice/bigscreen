@@ -6,7 +6,9 @@ import Card from "../../components/FrontUI/Card/Card";
 import Title from "../../components/FrontUI/Title/Title";
 
 const Answers = ({ match }) => {
+    /** Get all answers */
     const [answers, setAnswers] = React.useState([]);
+    /** Get created date of answers */
     const [date, setDate] = React.useState("");
     React.useEffect(() => {
         axios.get(`/results/${match.params.reponsesUrl}`).then(res => {

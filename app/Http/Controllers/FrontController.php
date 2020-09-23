@@ -20,7 +20,7 @@ class FrontController extends Controller
         $survey = Survey::orderBy('id', 'asc')->get();
         return $survey->toJson();
     }
-
+    /** Validate email via request email */
     public function emailValidation(Request $request)
     {
         $user = new User();

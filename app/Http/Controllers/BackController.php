@@ -17,7 +17,7 @@ class BackController extends Controller
 
     public function __construct()
     {
-
+        /** Include exception in auth:api routes for login and survey */
         $this->middleware('auth:api', ['except' => ['login', 'survey']]);
     }
 
@@ -48,11 +48,13 @@ class BackController extends Controller
 
         return response()->json(['error' => 'Unauthorized'], 401);
     }
+    /** Get list of questions survey */
     public function getSurveys()
     {
         $survey = Survey::orderBy('id', 'asc')->get();
         return $survey->toJson();
     }
+    /** Get list of answers */
     public function getAnswers()
     {
         $users = User::where('status', true)->get();
@@ -68,23 +70,30 @@ class BackController extends Controller
         }
         return $answer;
     }
+    /** Get all charts data and returns to json */
     public function getChartsAnswers()
     {
-        $pie6 = $this->getChartsByCountAndAnswers(6);
-        $pie7 = $this->getChartsByCountAndAnswers(7);
-        $pie10 = $this->getChartsByCountAndAnswers(10);
+        $pie6 = $this->getPieChartsByCountAndAnswers(6);
+        $pie7 = $this->getPieChartsByCountAndAnswers(7);
+        $pie10 = $this->getPieChartsByCountAndAnswers(10);
         $radar = $this->getRadarChartsByCountAndAnswers();
         return response()->json(["pie" => [$pie6, $pie7, $pie10], "radar" => $radar]);
     }
-    protected function getChartsByCountAndAnswers($id)
+    /** Get pie charts by user counted and answers with id*/
+    protected function getPieChartsByCountAndAnswers($id)
     {
         $answer = new Answer();
         $survey = new Survey();
+        /** Stats elements */
         $stats = [];
+        /** Get question by answers and id */
         $question = $survey->with("answers")->where('id', $id)->first();
+        /**Get options and convert to an array */
         $options = explode(', ', $question['option']);
         foreach ($options as $option) {
+            /** Get counted answers */
             $count = $answer->where('label', $option)->count();
+            /** Get labels */
             $labels = $answer->where('label', $option)->get();
             foreach ($labels as $label) {
                 $object = (object) [
@@ -96,7 +105,7 @@ class BackController extends Controller
         }
         return $stats;
     }
-
+    /** Get radar charts by user counted and answers with id*/
     public function getRadarChartsByCountAndAnswers()
     {
         $idQuestionList = [11, 12, 13, 14, 15];
@@ -117,7 +126,7 @@ class BackController extends Controller
             // Question Info
             $questionInfo                       = Survey::with(['answers'])->where('id', $idQuestion)->first();
 
-            // SUM of array
+            // Sum of array
             $sum                                        =   0;
             // Get options
             $answers                = explode(', ', $questionInfo['option']);

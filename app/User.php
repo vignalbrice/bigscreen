@@ -48,7 +48,7 @@ class User extends Authenticatable implements JWTSubject
      */
     public function getJWTIdentifier()
     {
-        return $this->getKey();
+        return $this->getKey(); // Récupérer la clé JWT de l'utilisateur.
     }
 
     /**
@@ -62,6 +62,6 @@ class User extends Authenticatable implements JWTSubject
     }
     public function answers()
     {
-        return $this->belongsToMany(Answer::class); // relaction hasMany pour lié plusieurs produits a une catégorie
+        return $this->belongsToMany(Answer::class); // relation hasMany pour lié plusieurs réponses a un seul questionnaire
     }
 }
