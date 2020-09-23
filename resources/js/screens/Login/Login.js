@@ -30,7 +30,7 @@ const Login = () => {
         };
         React.useEffect(() => {
             if (localStorage.getItem("token") && localStorage.getItem("user")) {
-                history.replace("administration");
+                history.push(redirect);
             }
         }, []);
         axios
