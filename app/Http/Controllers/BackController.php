@@ -102,6 +102,7 @@ class BackController extends Controller
         $idQuestionList = [11, 12, 13, 14, 15];
         /* Get count of user who answered survey */
         $userWhoAnswered                            = User::whereNotNull('url')->count();
+        if ($userWhoAnswered === 0) $userWhoAnswered = 1;
         // Survey elements
         $questionData_elt                   = [];
         // Push title and id

@@ -28,11 +28,6 @@ const Login = () => {
             email: data.email,
             password: data.password
         };
-        React.useEffect(() => {
-            if (localStorage.getItem("token") && localStorage.getItem("user")) {
-                history.push(redirect);
-            }
-        }, []);
         axios
             .post("api/auth/login", auth, {
                 headers: {
@@ -63,7 +58,9 @@ const Login = () => {
             Swal.fire("Vous avez bien été déconnecter !", message, "success");
             localStorage.clear();
         }
-    });
+        if (localStorage.getItem("token") && localStorage.getItem("user"))
+            history.push(redirect);
+    }, []);
 
     let msg = !errors
         ? "Connexion réussie !"
