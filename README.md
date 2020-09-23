@@ -1,5 +1,3 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
-
 ## Repository Public URL
 
 <a href="https://bigscreen-survey.herokuapp.com/">https://bigscreen-survey.herokuapp.com/</a>
