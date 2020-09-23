@@ -68,7 +68,6 @@ const Surveys = () => {
     const submitSurvey = e => {
         e.preventDefault();
         dataForm.shift();
-        console.log(dataForm);
         axios
             .post("/answers", { answers: dataForm, userId: userId })
             .then(response => {

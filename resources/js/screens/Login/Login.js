@@ -28,7 +28,11 @@ const Login = () => {
             email: data.email,
             password: data.password
         };
-
+        React.useEffect(() => {
+            if (localStorage.getItem("token") && localStorage.getItem("user")) {
+                history.replace("administration");
+            }
+        });
         axios
             .post("api/auth/login", auth, {
                 headers: {
@@ -37,7 +41,6 @@ const Login = () => {
                 }
             })
             .then(response => {
-                console.log(response.data);
                 setErrors(false);
                 localStorage.setItem("token", response.data.token);
                 localStorage.setItem(
@@ -48,7 +51,6 @@ const Login = () => {
                 history.replace(redirect);
             })
             .catch(error => {
-                console.log(error);
                 setErrors(true);
                 emailRef.current.value = "";
                 passwordRef.current.value = "";
@@ -63,7 +65,9 @@ const Login = () => {
         }
     });
 
-    let msg = !errors ? "Login Successful" : "Wrong Credentials";
+    let msg = !errors
+        ? "Connexion réussie !"
+        : "Identifiants ou mot de passe incorrect !";
     let name = !errors ? "alert alert-success" : "alert alert-danger";
     return (
         <div className="container-fluid h-100 text-dark">
