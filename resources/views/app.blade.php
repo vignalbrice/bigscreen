@@ -23,7 +23,7 @@
 </script>
 
 <body>
-    <div id=" app">
+    <div id="app">
     </div>
 
     <script src="{{ secure_asset('js/app.js') }}"></script>
