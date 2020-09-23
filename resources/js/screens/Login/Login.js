@@ -32,7 +32,7 @@ const Login = () => {
             if (localStorage.getItem("token") && localStorage.getItem("user")) {
                 history.replace("administration");
             }
-        });
+        }, []);
         axios
             .post("api/auth/login", auth, {
                 headers: {
