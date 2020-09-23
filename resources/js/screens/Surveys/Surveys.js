@@ -75,7 +75,7 @@ const Surveys = () => {
                 Swal.fire({
                     title: "Good Job !",
                     html: `<p>${response.data.text}</p>`,
-                    footer: `<a href="${PROD_URL}/${response.data.url}">Voir mes réponses</a>`,
+                    footer: `<a href="/reponses/${response.data.url}">Voir mes réponses</a>`,
                     icon: "success",
                     showConfirmButton: false,
                     showCancelButton: false,
