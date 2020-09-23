@@ -5,7 +5,7 @@
     object-fit: contain;
     background-color: #2c3e50;
     padding-left: 21%;
-    z-index: 10; /*display: none;*/
+    z-index: 10;
 }
 .header > a > img {
     object-fit: contain;

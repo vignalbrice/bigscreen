@@ -2,8 +2,8 @@ import React from "react";
 
 const Answer = ({ answer }) => {
     return answer.length > 0 ? (
-        answer.map(a => (
-            <div className="row">
+        answer.map((a, i) => (
+            <div className="row" key={i}>
                 <div className="col-12 ml-1">
                     <p className="h1 text-white">{a.username}</p>
                 </div>

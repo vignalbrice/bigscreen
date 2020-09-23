@@ -14,8 +14,7 @@ const Surveys = () => {
     const [emailValidator, setEmailValidator] = React.useState("");
     const [userId, setUserId] = React.useState(0);
     const [errorsMessage, setErrorsMessage] = React.useState({});
-    const PROD_URL = `www.${location.host}/reponses`;
-    const DEV_URL = `${location.host}/reponses`;
+
     React.useEffect(() => {
         axios.get("/surveys").then(response => {
             setSurveys(response.data);

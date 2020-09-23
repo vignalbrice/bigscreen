@@ -54,7 +54,10 @@ const Dashboard = ({ pieCharts, radarCharts }) => {
                     )}
                 </div>
                 {radarCharts?.map((rc, index) => (
-                    <div className="col-md-10 col-sm-12 col-xs-12" key={index}>
+                    <div
+                        className="col-md-10 col-sm-12 col-xs-12 mw-100"
+                        key={index}
+                    >
                         <div className="card mb-3">
                             <Radar
                                 data={{

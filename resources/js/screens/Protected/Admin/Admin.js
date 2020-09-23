@@ -5,6 +5,7 @@ import Survey from "../Survey/Survey";
 import Answer from "../Answer/Answer";
 import axios from "axios";
 import Dashboard from "../Dashboard/Dashboard";
+import Swal from "sweetalert2";
 
 const Admin = ({ history }) => {
     const [admin, setAdmin] = React.useState([]);
@@ -35,7 +36,7 @@ const Admin = ({ history }) => {
                 setRadarCharts(response[2].data.radar);
             })
             .catch(error => {
-                console.log(error);
+                Swal.fire("Oops..une erreur est survenue!", error, "error");
             });
     }, []);
     const onClickLink = link => {
